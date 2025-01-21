@@ -4,65 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iPod Shuffle</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            background-color: white;
-        }
-
-        .ipod {
-            background: url('./shuffle.png') no-repeat center center; /* Correct relative path */
-            background-size: contain;
-            width: 200px; /* Adjust based on your image dimensions */
-            height: 200px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .button {
-            position: absolute;
-            cursor: pointer;
-        }
-
-        /* Adjusted button areas to align with the visible shuffle layout */
-        .play-pause {
-            top: 82px;
-            left: 82px;
-            width: 36px;
-            height: 36px;
-        }
-
-        .next {
-            top: 82px;
-            left: 130px; /* Moved slightly to the left */
-            width: 36px;
-            height: 36px;
-        }
-
-        .previous {
-            top: 82px;
-            left: 38px; /* Moved further to the right */
-            width: 36px;
-            height: 36px;
-        }
-
-        .stop {
-            top: 24px;
-            left: 82px;
-            width: 36px;
-            height: 36px;
-        }
-
-        .volume-down {
-            top: 140px;
-            left: 82px;
-            width: 36px;
-            height: 36px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="ipod" class="ipod">
@@ -74,58 +16,6 @@
     </div>
 
     <audio id="audioPlayer"></audio>
-
-    <script>
-        const songs = [
-            './ambition.mp3', // Correct relative path for hosted files
-            './extradimensional.mp3',
-            './presidential.mp3',
-            './major_plays.mp3' // Updated to remove space
-        ];
-        let currentSongIndex = 0;
-        const audioPlayer = document.getElementById('audioPlayer');
-
-        // Bind event listeners programmatically
-        document.getElementById('play-pause').addEventListener('click', playPause);
-        document.getElementById('next').addEventListener('click', nextSong);
-        document.getElementById('previous').addEventListener('click', previousSong);
-        document.getElementById('stop').addEventListener('click', stopSong);
-        document.getElementById('volume-down').addEventListener('click', volumeDown);
-
-        function playPause() {
-            if (audioPlayer.paused) {
-                audioPlayer.play();
-            } else {
-                audioPlayer.pause();
-            }
-        }
-
-        function nextSong() {
-            currentSongIndex = (currentSongIndex + 1) % songs.length;
-            playCurrentSong();
-        }
-
-        function previousSong() {
-            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-            playCurrentSong();
-        }
-
-        function stopSong() {
-            audioPlayer.pause();
-            audioPlayer.currentTime = 0;
-        }
-
-        function volumeDown() {
-            audioPlayer.volume = Math.max(0, audioPlayer.volume - 0.1);
-        }
-
-        function playCurrentSong() {
-            audioPlayer.src = songs[currentSongIndex];
-            audioPlayer.play();
-        }
-
-        // Load the first song initially
-        audioPlayer.src = songs[currentSongIndex];
-    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>
