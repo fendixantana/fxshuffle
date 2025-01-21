@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+.ipod {
+    background: url('./shuffle.png') no-repeat center center;
+    background-size: contain;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button {
+    position: absolute;
+    cursor: pointer;
+}
+
+.play-pause {
+    top: 82px;
+    left: 82px;
+    width: 36px;
+    height: 36px;
+}
+
+.next {
+    top: 82px;
+    left: 130px;
+    width: 36px;
+    height: 36px;
+}
+
+.previous {
+    top: 82px;
+    left: 38px;
+    width: 36px;
+    height: 36px;
+}
+
+.stop {
+    top: 24px;
+    left: 82px;
+    width: 36px;
+    height: 36px;
+}
+
+.volume-down {
+    top: 140px;
+    left: 82px;
+    width: 36px;
+    height: 36px;
+}
