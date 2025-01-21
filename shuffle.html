@@ -66,11 +66,11 @@
 </head>
 <body>
     <div id="ipod" class="ipod">
-        <div class="button play-pause" onclick="playPause()"></div>
-        <div class="button next" onclick="nextSong()"></div>
-        <div class="button previous" onclick="previousSong()"></div>
-        <div class="button stop" onclick="stopSong()"></div>
-        <div class="button volume-down" onclick="volumeDown()"></div>
+        <div id="play-pause" class="button play-pause"></div>
+        <div id="next" class="button next"></div>
+        <div id="previous" class="button previous"></div>
+        <div id="stop" class="button stop"></div>
+        <div id="volume-down" class="button volume-down"></div>
     </div>
 
     <audio id="audioPlayer"></audio>
@@ -84,6 +84,13 @@
         ];
         let currentSongIndex = 0;
         const audioPlayer = document.getElementById('audioPlayer');
+
+        // Bind event listeners programmatically
+        document.getElementById('play-pause').addEventListener('click', playPause);
+        document.getElementById('next').addEventListener('click', nextSong);
+        document.getElementById('previous').addEventListener('click', previousSong);
+        document.getElementById('stop').addEventListener('click', stopSong);
+        document.getElementById('volume-down').addEventListener('click', volumeDown);
 
         function playPause() {
             if (audioPlayer.paused) {
