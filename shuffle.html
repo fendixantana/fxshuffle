@@ -12,7 +12,7 @@
         }
 
         .ipod {
-            background: url('shuffle.png') no-repeat center center;
+            background: url('./shuffle.png') no-repeat center center; /* Correct relative path */
             background-size: contain;
             width: 200px; /* Adjust based on your image dimensions */
             height: 200px;
@@ -37,14 +37,14 @@
 
         .next {
             top: 82px;
-            left: 129px; /* Moved slightly to the left */
+            left: 130px; /* Moved slightly to the left */
             width: 36px;
             height: 36px;
         }
 
         .previous {
             top: 82px;
-            left: 48px; /* Moved slightly to the right */
+            left: 38px; /* Moved further to the right */
             width: 36px;
             height: 36px;
         }
@@ -77,10 +77,10 @@
 
     <script>
         const songs = [
-            'ambition.mp3', // Replace with hosted URLs for your MP3s
-            'extradimensional.mp3',
-            'presidential.mp3',
-            'major plays.mp3'
+            './ambition.mp3', // Correct relative path for hosted files
+            './extradimensional.mp3',
+            './presidential.mp3',
+            './major plays.mp3'
         ];
         let currentSongIndex = 0;
         const audioPlayer = document.getElementById('audioPlayer');
